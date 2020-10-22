@@ -14,11 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dd('123');
     return view('welcome');
 });
 
 Route::get('/admin', function () {
-    return view('layouts.admin');
+    return view('dashboard_tmp');
 });
 
+Route::get('/login', function () {
+    return view('layouts.auth');
+});
 
+Route::get('/password/reset', function () {
+    return view('auth.passwords.reset');
+})->name('password.reset');
